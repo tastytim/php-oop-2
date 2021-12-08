@@ -40,8 +40,8 @@ $client->insertPaymentDates("tastytimgm@gmail.com" , 3259249744872439574);
 echo "<br>Dati di pagamento<br>";
 // echo $client->getPaypal();
 
-echo "PAYPAL " . $client->getCreditCard() . "<br>";
-echo "CARTA DI CREDITO " . $client->getPaypal();
+echo "CARTA DI CREDITO " . $client->getCreditCard() . "<br>";
+echo "PAYPAL " . $client->getPaypal();
 
 
 
