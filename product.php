@@ -3,29 +3,38 @@
 include __DIR__ . "/data.php";
 
 class Product{
-     protected $product=[];
+     protected $products=[];
 
-     function __construct($_product){
-          $this->product = $_product;
+     function __construct($_products){
+          $this->products = $_products;
      }
 
-     function getProduct(){
-          return $this->product;
+     function getProducts(){
+          return $this->products;
      }
 
-     function setProduct($_product){
-        $this->product = $_product;
+     function getProductsForId($_id){
+          return $this->products[$_id];
      }
 
+     function setProducts($_products){
+        $this->products = $_products;
+     }
 
+     function addNewProducts($_array){
+          foreach($_array as $key=>$value){
+               array_push($this->products , $value);
+          }
+     }
 
-
-
-
-
-     
-
-
+     function __toString()
+     {
+          $stringToReturn ="";
+          foreach($this->products as $key=>$value){
+              $stringToReturn.=implode($value) .  "</br>" ;
+          }
+          return $stringToReturn;
+     }
 
 
 }

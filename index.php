@@ -1,36 +1,60 @@
 <?php 
 
-include __DIR__ . "/client.php";
 include __DIR__ . "/product.php";
 include __DIR__ . "/data.php";
+include __DIR__ . "/clientPrime.php";
+
+
+// CREATO NUOVO CLIENTE
+$client = new ClientPrime(1, "Tim" , "Pavlenko" , "Reggio Emilia" , [], [], false , 0);
+echo $client->__toString();
+
+// CREATO PRODOTTI
+$prodotti = new Product([]);
+$prodotti->addNewProducts($listTv);
+$prodotti->addNewProducts($listSmartphone);
+
+echo "<br>Prodotti<br>";
+echo $prodotti->__toString();
+
+
+// IL CLIENTE AGGIUNGE NEL CARRELLO I PRODOTTI
+$client->addProduct($prodotti->getProductsForId(0));
+$client->addProduct($prodotti->getProductsForId(4));
+
+echo "<br>Carello<br>";
+echo $client->printCartProducts();
+
+
+// RIMUOVE IL PRODOTTO 
+$client->removeProduct(1);
+echo "<br>Carello<br>";
+echo $client->printCartProducts();
 
 
 
-$listClients = [];
-$client = new Client( 1, "Tim","Pavlenko","Reggio Emilia",[],new PaymentData("tastytimgm@gmail.com", 00001111222233334444));
-var_dump($client);
-$client2 = new Client(2, "Ivan", "Ivanov"  , "Moscow", [], new PaymentData("paypal@data.com", 3483209480934832904));
 
 
-$client->addProduct(new Product([
-    "id" => "3213",
-    "marchio" => "Samsung",
-    "pollici" => 55,
-    "country" => "Cina"
- ]));
+// AGGINGO PAYPAL E CARTA DI CREDITO
+$client->insertPaymentDates("tastytimgm@gmail.com" , 3259249744872439574);
+echo "<br>Dati di pagamento<br>";
+// echo $client->getPaypal();
+
+echo "PAYPAL " . $client->getCreditCard() . "<br>";
+echo "CARTA DI CREDITO " . $client->getPaypal();
 
 
-var_dump($client->getCart());
-
-foreach($listTv as $key => $value){
-    $client2->addProduct($value);
-}
-
-var_dump($client2->getCart());
 
 
-$client->removeProduct(0);
-var_dump($client->getCart());
+
+
+
+
+
+
+
+
+
 
 
 

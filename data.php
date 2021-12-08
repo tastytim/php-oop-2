@@ -2,7 +2,6 @@
 
 $listTv = [
 
-    [
        [
           "id" => "3213",
           "marchio" => "Samsung",
@@ -20,7 +19,7 @@ $listTv = [
         "marchio" => "Thomson",
         "pollici" => 75,
         "country" => "Vietnam"
-       ]
+       
        ],
     ];
 
