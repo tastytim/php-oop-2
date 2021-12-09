@@ -46,4 +46,39 @@ $listTv = [
          ];
 
 
+
+         $clientsData = [
+            [
+               "id" => 123,
+               "name" => "Bill",
+               "surname" => "Gates",
+               "adress" => "Reggio",
+               "cart" => [],
+               "paymentdata" => [],
+               "prime" => false,
+               "discount" => 0
+            ],
+            [
+               "id" => 125,
+               "name" => "Steve",
+               "surname" => "Jobs",
+               "adress" => "Reggio",
+               "cart" => [],
+               "paymentdata" => [],
+               "prime" => true,
+               "discount" => 10
+            ],
+            [
+               "id" => 126,
+               "name" => "Elon",
+               "surname" => "Musk",
+               "adress" => "Reggio",
+               "cart" => [],
+               "paymentdata" => [],
+               "prime" => false,
+               "discount" => 0
+            ],
+         ]
+
+
 ?>

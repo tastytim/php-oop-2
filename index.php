@@ -3,6 +3,7 @@
 include __DIR__ . "/product.php";
 include __DIR__ . "/data.php";
 include __DIR__ . "/clientPrime.php";
+include __DIR__ . "/clients.php";
 
 
 // CREATO NUOVO CLIENTE
@@ -42,6 +43,20 @@ echo "<br>Dati di pagamento<br>";
 
 echo "CARTA DI CREDITO " . $client->getCreditCard() . "<br>";
 echo "PAYPAL " . $client->getPaypal();
+
+
+
+
+// INSERISCO I CLIENTS 
+$clientsClass = new Clients([]);
+
+
+foreach($clientsData as $key=>$value){
+    
+}
+
+var_dump($clientsList);
+
 
 
 
