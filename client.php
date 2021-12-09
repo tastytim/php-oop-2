@@ -1,6 +1,6 @@
 <?php 
 
-include __DIR__ . "/paymentdata.php";
+require __DIR__ . "/paymentdata.php";
 
 class Client extends PaymentData {
     protected $id = 0;

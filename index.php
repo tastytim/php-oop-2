@@ -37,22 +37,25 @@ echo $client->printCartProducts();
 // AGGINGO PAYPAL E CARTA DI CREDITO
 $client->insertPaymentDates("tastytimgm@gmail.com" , 3259249744872439574);
 echo "<br>Dati di pagamento<br>";
-// echo $client->getPaypal();
 
 echo "CARTA DI CREDITO " . $client->getCreditCard() . "<br>";
-echo "PAYPAL " . $client->getPaypal();
+echo "PAYPAL " . $client->getPaypal() . "<br>";
 
 
 
 
-// INSERISCO I CLIENTS 
-$clientsClass = new Clients();
-// USO LA TRAIT UTILITIES
+// CREO CLIENTS CLASS
+$clientsClass = new Clients(array());
+// NEL CLIENTS AGGIUNGO I CLIENTI E APPLICO UPPERCASE ALLE STRINGHE USANDO FUNCTION DEL TRAIT UTILITIES
+$clientsClass->addNewClients($clientsData);
 
-$clientsClass->getClients() []= new ClientPrime(1,"dkdk","ddd","ddd",[],[],false,0);
-$clientsClass->addNewClients($clientsClass->getClients() , $clientsData);
+
 var_dump($clientsClass->getClients());
-$clientsClass->printClients();
+
+
+
+
+
 
 
 
