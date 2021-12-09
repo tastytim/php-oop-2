@@ -27,18 +27,8 @@ function setClients($_clientsList){
 
 function printClients(){
     echo count($this->clientsList);
-    foreach($this->clientsList as $key=>$value){
-        echo $value;
-    }
+    
 }
-
-
-
-
-
-
-
-
 }
 
 

@@ -34,8 +34,6 @@ echo $client->printCartProducts();
 
 
 
-
-
 // AGGINGO PAYPAL E CARTA DI CREDITO
 $client->insertPaymentDates("tastytimgm@gmail.com" , 3259249744872439574);
 echo "<br>Dati di pagamento<br>";
@@ -49,7 +47,11 @@ echo "PAYPAL " . $client->getPaypal();
 
 // INSERISCO I CLIENTS 
 $clientsClass = new Clients();
+// USO LA TRAIT UTILITIES
+
+$clientsClass->getClients() []= new ClientPrime(1,"dkdk","ddd","ddd",[],[],false,0);
 $clientsClass->addNewClients($clientsClass->getClients() , $clientsData);
+var_dump($clientsClass->getClients());
 $clientsClass->printClients();
 
 
