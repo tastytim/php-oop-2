@@ -48,14 +48,9 @@ echo "PAYPAL " . $client->getPaypal();
 
 
 // INSERISCO I CLIENTS 
-$clientsClass = new Clients([]);
-
-
-foreach($clientsData as $key=>$value){
-    
-}
-
-var_dump($clientsList);
+$clientsClass = new Clients();
+$clientsClass->addNewClients($clientsClass->getClients() , $clientsData);
+$clientsClass->printClients();
 
 
 
